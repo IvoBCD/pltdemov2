@@ -5,7 +5,9 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: zephyrprojectrtos/ci:latest
+    container: zephyrprojectrtos/ci:v0.18.4
+    env:
+      ZEPHYR_SDK_INSTALL_DIR: "/opt/toolchains/zephyr-sdk-0.13.1"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
